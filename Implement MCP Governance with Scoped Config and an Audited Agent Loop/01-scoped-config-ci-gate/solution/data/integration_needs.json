@@ -1,0 +1,47 @@
+[
+  {
+    "name": "claims database",
+    "proprietary_data": true,
+    "community_server_exists": false,
+    "handles_pii": true,
+    "customization": "high",
+    "maintenance_capacity": "high",
+    "expected": "custom"
+  },
+  {
+    "name": "policy database",
+    "proprietary_data": true,
+    "community_server_exists": false,
+    "handles_pii": true,
+    "customization": "high",
+    "maintenance_capacity": "high",
+    "expected": "custom"
+  },
+  {
+    "name": "GitHub (issues, PRs, code)",
+    "proprietary_data": false,
+    "community_server_exists": true,
+    "handles_pii": false,
+    "customization": "low",
+    "maintenance_capacity": "high",
+    "expected": "community"
+  },
+  {
+    "name": "Slack (team notifications)",
+    "proprietary_data": false,
+    "community_server_exists": true,
+    "handles_pii": false,
+    "customization": "low",
+    "maintenance_capacity": "medium",
+    "expected": "community"
+  },
+  {
+    "name": "Jira with a heavily customized adjuster workflow",
+    "proprietary_data": false,
+    "community_server_exists": true,
+    "handles_pii": false,
+    "customization": "high",
+    "maintenance_capacity": "high",
+    "expected": "custom"
+  }
+]

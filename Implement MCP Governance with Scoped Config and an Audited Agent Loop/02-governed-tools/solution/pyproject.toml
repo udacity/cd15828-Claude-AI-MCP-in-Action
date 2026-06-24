@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-governance"
+version = "0.2.0"
+description = "MCP governance toolkit for an insurance platform: scoped .mcp.json registry with env-var expansion, a secret-leak CI gate, custom claims/policy FastMCP servers, a claims-schema MCP resource, a build-vs-reuse decision engine, and an append-only audit trail"
+requires-python = ">=3.11"
+dependencies = [
+  "anthropic>=0.40",
+  "mcp>=1.2",
+  "pydantic>=2.7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "pytest-asyncio>=0.23",
+  "mypy>=1.10",
+  "ruff>=0.5",
+]
+
+[project.scripts]
+mcp-governance = "mcp_governance.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["mcp_governance*"]
+
+[tool.setuptools.package-data]
+mcp_governance = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+  "live: integration tests requiring ANTHROPIC_API_KEY and network access",
+]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+disallow_untyped_defs = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "RUF"]

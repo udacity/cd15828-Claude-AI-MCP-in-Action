@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retail-inventory-mcp-agent"
+version = "0.2.0"
+description = "Retail inventory management agent with four differentiated MCP tools and structured error handling."
+requires-python = ">=3.11"
+dependencies = [
+  "anthropic>=0.40",
+  "mcp>=1.2",
+  "pydantic>=2.7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "pytest-asyncio>=0.23",
+  "mypy>=1.10",
+  "ruff>=0.5",
+]
+
+[project.scripts]
+retail-inventory-mcp-agent = "inventory_agent.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["inventory_agent*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+disallow_untyped_defs = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "RUF"]

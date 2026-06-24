@@ -1,0 +1,84 @@
+{
+  "model": "claude-haiku-4-5",
+  "scenario": "retail-inventory-demo",
+  "events": [
+    {
+      "type": "user",
+      "text": "How many units of SKU-1001 are on hand in the WH-EAST warehouse?"
+    },
+    {
+      "type": "tool_use",
+      "name": "check_stock",
+      "input": {
+        "sku": "SKU-1001",
+        "warehouse_id": "WH-EAST"
+      },
+      "attempt": 1
+    },
+    {
+      "type": "tool_result",
+      "name": "check_stock",
+      "attempt": 1,
+      "isError": true,
+      "errorCategory": "transient",
+      "isRetryable": true,
+      "message": "Warehouse 'WH-EAST' API timed out; retry shortly."
+    },
+    {
+      "type": "tool_use",
+      "name": "check_stock",
+      "input": {
+        "sku": "SKU-1001",
+        "warehouse_id": "WH-EAST"
+      },
+      "attempt": 2
+    },
+    {
+      "type": "tool_result",
+      "name": "check_stock",
+      "attempt": 2,
+      "isError": false,
+      "data": {
+        "sku": "SKU-1001",
+        "warehouse_id": "WH-EAST",
+        "quantity": 120
+      }
+    },
+    {
+      "type": "assistant",
+      "text": "There are **120 units** of SKU-1001 on hand in the WH-EAST warehouse."
+    },
+    {
+      "type": "user",
+      "text": "I am a sales clerk without manager approval. Please change the price of SKU-1001 to 69.99."
+    },
+    {
+      "type": "tool_use",
+      "name": "update_price",
+      "input": {
+        "sku": "SKU-1001",
+        "new_price": 69.99,
+        "manager_approved": false
+      },
+      "attempt": 1
+    },
+    {
+      "type": "tool_result",
+      "name": "update_price",
+      "attempt": 1,
+      "isError": true,
+      "errorCategory": "permission",
+      "isRetryable": false,
+      "message": "Price change for SKU-1001 requires manager approval; no change was made."
+    },
+    {
+      "type": "escalation",
+      "payload": {
+        "sku": "SKU-1001",
+        "requested_change": "update_price({'sku': 'SKU-1001', 'new_price': 69.99, 'manager_approved': False})",
+        "root_cause": "Price change for SKU-1001 requires manager approval; no change was made.",
+        "recommended_action": "Route to a store manager for price-change approval, then retry."
+      }
+    }
+  ]
+}

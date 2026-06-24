@@ -1,0 +1,13 @@
+{
+  "_comment": "Template for an individual underwriter's ~/.claude.json. Personal-scoped MCP servers live here, NOT in the project .mcp.json. Copy the mcpServers block into your real ~/.claude.json. Credentials are referenced via ${VAR} and resolved from your shell environment -- never paste a literal token here.",
+  "mcpServers": {
+    "underwriter-research": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      }
+    }
+  }
+}

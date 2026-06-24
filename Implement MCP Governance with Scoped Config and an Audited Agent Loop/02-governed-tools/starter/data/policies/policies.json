@@ -1,0 +1,74 @@
+[
+  {
+    "policy_id": "POL-5001",
+    "holder_name": "Margaret A. Donnelly",
+    "policy_type": "auto",
+    "coverage_limit": 100000,
+    "deductible": 1000,
+    "status": "active",
+    "effective_date": "2022-03-15"
+  },
+  {
+    "policy_id": "POL-5002",
+    "holder_name": "Riverside Bakery LLC",
+    "policy_type": "home",
+    "coverage_limit": 450000,
+    "deductible": 2500,
+    "status": "active",
+    "effective_date": "2021-07-01"
+  },
+  {
+    "policy_id": "POL-5003",
+    "holder_name": "James T. Whitfield",
+    "policy_type": "life",
+    "coverage_limit": 500000,
+    "deductible": 0,
+    "status": "active",
+    "effective_date": "2023-01-10"
+  },
+  {
+    "policy_id": "POL-5004",
+    "holder_name": "Sofia Hernandez-Cole",
+    "policy_type": "auto",
+    "coverage_limit": 150000,
+    "deductible": 500,
+    "status": "lapsed",
+    "effective_date": "2021-11-22"
+  },
+  {
+    "policy_id": "POL-5005",
+    "holder_name": "Northgate Auto Repair Inc.",
+    "policy_type": "umbrella",
+    "coverage_limit": 3000000,
+    "deductible": 0,
+    "status": "active",
+    "effective_date": "2024-02-05"
+  },
+  {
+    "policy_id": "POL-5006",
+    "holder_name": "Daniel Okafor",
+    "policy_type": "home",
+    "coverage_limit": 320000,
+    "deductible": 1000,
+    "status": "active",
+    "effective_date": "2022-09-30"
+  },
+  {
+    "policy_id": "POL-5007",
+    "holder_name": "Emily R. Castellano",
+    "policy_type": "auto",
+    "coverage_limit": 75000,
+    "deductible": 1000,
+    "status": "cancelled",
+    "effective_date": "2023-05-18"
+  },
+  {
+    "policy_id": "POL-5008",
+    "holder_name": "William and Grace Tanaka",
+    "policy_type": "home",
+    "coverage_limit": 600000,
+    "deductible": 5000,
+    "status": "active",
+    "effective_date": "2025-01-12"
+  }
+]

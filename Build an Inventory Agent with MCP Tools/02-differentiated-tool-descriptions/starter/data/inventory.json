@@ -1,0 +1,33 @@
+{
+  "warehouses": {
+    "WH-EAST": {"name": "East Distribution Center", "status": "online"},
+    "WH-WEST": {"name": "West Distribution Center", "status": "online"},
+    "WH-SOUTH": {"name": "South Distribution Center", "status": "offline"}
+  },
+  "products": {
+    "SKU-1001": {
+      "name": "Wireless Earbuds",
+      "price": 79.99,
+      "return_window_days": 30,
+      "stock": {"WH-EAST": 120, "WH-WEST": 0, "WH-SOUTH": 64}
+    },
+    "SKU-1002": {
+      "name": "Bluetooth Speaker",
+      "price": 49.99,
+      "return_window_days": 30,
+      "stock": {"WH-EAST": 8, "WH-WEST": 41, "WH-SOUTH": 0}
+    },
+    "SKU-1003": {
+      "name": "USB-C Charger",
+      "price": 19.99,
+      "return_window_days": 14,
+      "stock": {"WH-EAST": 300, "WH-WEST": 210, "WH-SOUTH": 150}
+    },
+    "SKU-1004": {
+      "name": "Laptop Stand",
+      "price": 34.99,
+      "return_window_days": 30,
+      "stock": {"WH-EAST": 25, "WH-WEST": 12, "WH-SOUTH": 9}
+    }
+  }
+}

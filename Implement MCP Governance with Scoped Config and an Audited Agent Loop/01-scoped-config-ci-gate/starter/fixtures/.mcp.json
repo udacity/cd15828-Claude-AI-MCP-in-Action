@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "claims-database": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["-m", "mcp_governance.servers", "claims"]
+    },
+    "policy-lookup": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["-m", "mcp_governance.servers", "policy"],
+      "env": {
+        "POLICY_API_KEY": "${POLICY_API_KEY}"
+      }
+    },
+    "github": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "claim_id": "CLM-10001",
+    "policy_id": "POL-5001",
+    "claimant_name": "Margaret A. Donnelly",
+    "status": "paid",
+    "incident_type": "auto_collision",
+    "amount": 8450.00,
+    "filed_date": "2024-04-12",
+    "adjuster": "Karen Liu"
+  },
+  {
+    "claim_id": "CLM-10002",
+    "policy_id": "POL-5002",
+    "claimant_name": "Riverside Bakery LLC",
+    "status": "approved",
+    "incident_type": "water_damage",
+    "amount": 23700.50,
+    "filed_date": "2024-06-03",
+    "adjuster": "Marcus Bell"
+  },
+  {
+    "claim_id": "CLM-10003",
+    "policy_id": "POL-5006",
+    "claimant_name": "Daniel Okafor",
+    "status": "under_review",
+    "incident_type": "property_damage",
+    "amount": 14200.00,
+    "filed_date": "2024-08-21",
+    "adjuster": "Priya Nair"
+  },
+  {
+    "claim_id": "CLM-10004",
+    "policy_id": "POL-5004",
+    "claimant_name": "Sofia Hernandez-Cole",
+    "status": "denied",
+    "incident_type": "auto_collision",
+    "amount": 2150.00,
+    "filed_date": "2024-02-09",
+    "adjuster": "Karen Liu"
+  },
+  {
+    "claim_id": "CLM-10005",
+    "policy_id": "POL-5008",
+    "claimant_name": "Grace Tanaka",
+    "status": "submitted",
+    "incident_type": "theft",
+    "amount": 6800.00,
+    "filed_date": "2025-03-14",
+    "adjuster": "Tom Reyes"
+  },
+  {
+    "claim_id": "CLM-10006",
+    "policy_id": "POL-5005",
+    "claimant_name": "Northgate Auto Repair Inc.",
+    "status": "under_review",
+    "incident_type": "liability",
+    "amount": 185000.00,
+    "filed_date": "2024-11-02",
+    "adjuster": "Marcus Bell"
+  },
+  {
+    "claim_id": "CLM-10007",
+    "policy_id": "POL-5001",
+    "claimant_name": "Margaret A. Donnelly",
+    "status": "paid",
+    "incident_type": "auto_collision",
+    "amount": 1320.75,
+    "filed_date": "2024-09-19",
+    "adjuster": "Karen Liu"
+  },
+  {
+    "claim_id": "CLM-10008",
+    "policy_id": "POL-5002",
+    "claimant_name": "Anita Pereira",
+    "status": "approved",
+    "incident_type": "property_damage",
+    "amount": 28900.00,
+    "filed_date": "2025-01-27",
+    "adjuster": "Priya Nair"
+  },
+  {
+    "claim_id": "CLM-10009",
+    "policy_id": "POL-5008",
+    "claimant_name": "William Tanaka",
+    "status": "submitted",
+    "incident_type": "water_damage",
+    "amount": 41500.00,
+    "filed_date": "2025-04-30",
+    "adjuster": "Tom Reyes"
+  },
+  {
+    "claim_id": "CLM-10010",
+    "policy_id": "POL-5006",
+    "claimant_name": "Daniel Okafor",
+    "status": "denied",
+    "incident_type": "theft",
+    "amount": 980.00,
+    "filed_date": "2024-12-15",
+    "adjuster": "Priya Nair"
+  },
+  {
+    "claim_id": "CLM-10011",
+    "policy_id": "POL-5005",
+    "claimant_name": "Northgate Auto Repair Inc.",
+    "status": "approved",
+    "incident_type": "liability",
+    "amount": 96250.00,
+    "filed_date": "2025-02-18",
+    "adjuster": "Marcus Bell"
+  },
+  {
+    "claim_id": "CLM-10012",
+    "policy_id": "POL-5001",
+    "claimant_name": "Margaret A. Donnelly",
+    "status": "submitted",
+    "incident_type": "auto_collision",
+    "amount": 5600.00,
+    "filed_date": "2025-05-22",
+    "adjuster": "Karen Liu"
+  }
+]

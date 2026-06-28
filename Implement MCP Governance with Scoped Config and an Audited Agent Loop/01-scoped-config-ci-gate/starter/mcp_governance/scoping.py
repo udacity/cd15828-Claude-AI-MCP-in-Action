@@ -209,7 +209,7 @@ def _looks_like_secret(key: str, value: str) -> str | None:
     else ``None``. A value containing a ``${...}`` reference is considered externalized
     and is never a leak."""
     # TODO (LO-1): implement the leak rule. A ${VAR} reference is EXTERNALIZED and is
-    #   NEVER a leak (this is the false positive learners hit -- guard for "${" first).
+    #   NEVER a leak (this is the common false positive -- guard for "${" first).
     #   Flag a leak (return a reason string) when the literal value: begins with a known
     #   credential prefix (_SECRET_PREFIXES); OR sits under a credential-named key
     #   (_SECRET_KEY) as a non-empty literal; OR is a high-entropy blob (_HIGH_ENTROPY).

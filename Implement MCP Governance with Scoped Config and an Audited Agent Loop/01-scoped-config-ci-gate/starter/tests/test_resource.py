@@ -1,4 +1,4 @@
-"""US-03 -- the claims schema catalog exposed as an MCP Resource (claims://schema)."""
+"""The claims schema catalog exposed as an MCP Resource (claims://schema)."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ async def _read_schema_resource() -> dict[str, Any]:
     return payload
 
 
-# ---- AC-03-01: the resource exists and carries the field catalog ----------------
+# ---- The resource exists and carries the field catalog ----------------
 
 
 async def test_resource_is_registered() -> None:
@@ -38,7 +38,7 @@ async def test_resource_content_is_field_catalog() -> None:
         assert spec["type"] and spec["description"] and "example" in spec
 
 
-# ---- AC-03-02: catalog <-> data parity (no drift) -------------------------------
+# ---- Catalog <-> data parity (no drift) -------------------------------
 
 
 def test_catalog_matches_data_fields_exactly() -> None:
@@ -51,7 +51,7 @@ def test_catalog_matches_data_fields_exactly() -> None:
     assert catalog_fields == data_fields  # no field missing, none fabricated
 
 
-# ---- AC-03-03: catalog is generated from the schema source ----------------------
+# ---- Catalog is generated from the schema source ----------------------
 
 
 @pytest.mark.parametrize("spec", CLAIMS_SCHEMA, ids=lambda s: s.name)
@@ -73,7 +73,7 @@ def test_status_enum_surfaced_in_catalog() -> None:
     }
 
 
-# ---- AC-03-04: the resource reduces exploratory tool calls ----------------------
+# ---- The resource reduces exploratory tool calls ----------------------
 
 
 class CountingClaimsService(ClaimsService):

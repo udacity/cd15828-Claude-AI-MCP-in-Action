@@ -1,7 +1,7 @@
 # Claude AI: MCP in Action
 
-This repo holds the hands-on exercises for the course. The exercises are grouped into two
-projects, each a self-contained Python codebase that you build up one exercise at a time.
+This repo holds a set of hands-on exercises grouped into two projects, each a self-contained
+Python codebase that you build up one exercise at a time.
 
 ## Folder Structure
 
@@ -12,7 +12,7 @@ reference implementation):
 ```bash
 <Project Name>/
 └── NN-exercise-name/
-    ├── starter/      # scaffold with TODOs — what learners work from
+    ├── starter/      # scaffold with TODOs — the implementation starting point
     │   └── README.md # exercise instructions
     └── solution/     # complete reference implementation
         └── README.md

@@ -1,8 +1,8 @@
-"""US-02 — Structured error responses with categories.
+"""Structured error responses with categories.
 
-Covers AC-02-01 (uniform isError envelope), AC-02-02 (all four categories exercised; permission
-is a pre-mutation intercept), AC-02-03 (only transient is retryable), AC-02-04 (empty result is
-not an error), AC-02-05 (no generic/unstructured errors; nothing raises).
+Covers the uniform isError envelope; all four categories (permission
+is a pre-mutation intercept); only transient is retryable; an empty result is
+not an error; and no generic/unstructured errors (nothing raises).
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ def svc() -> InventoryService:
     return InventoryService.from_file()
 
 
-# --- AC-02-01: uniform envelope + wire shape ------------------------------------------
+# --- Uniform envelope + wire shape ------------------------------------------
 
 
 def test_success_wire_shape_has_isError_false_and_data() -> None:
@@ -36,7 +36,7 @@ def test_error_wire_shape_uses_camelcase_fields() -> None:
     assert wire["message"] == "bad sku"
 
 
-# --- AC-02-02: each category exercised by a real tool ---------------------------------
+# --- Each category exercised by a real tool ---------------------------------
 
 
 def test_transient_error_on_offline_warehouse(svc: InventoryService) -> None:
@@ -69,7 +69,7 @@ def test_permission_intercept_blocks_mutation_before_execution(svc: InventorySer
     assert approved.data["previous_price"] == 19.99
 
 
-# --- AC-02-03: retryability ------------------------------------------------------------
+# --- Retryability ------------------------------------------------------------
 
 
 @pytest.mark.parametrize(
@@ -85,7 +85,7 @@ def test_only_transient_is_retryable(category: ErrorCategory, expected: bool) ->
     assert ToolResult.fail(category, "x").is_retryable is expected
 
 
-# --- AC-02-04: empty result is not an error -------------------------------------------
+# --- Empty result is not an error -------------------------------------------
 
 
 def test_zero_stock_is_a_successful_empty_result(svc: InventoryService) -> None:
@@ -102,7 +102,7 @@ def test_empty_result_is_distinguishable_from_transient_failure(svc: InventorySe
     assert empty.to_wire() != unreachable.to_wire()
 
 
-# --- AC-02-05: no generic/unstructured errors; nothing raises -------------------------
+# --- No generic/unstructured errors; nothing raises -------------------------
 
 
 @pytest.mark.parametrize(

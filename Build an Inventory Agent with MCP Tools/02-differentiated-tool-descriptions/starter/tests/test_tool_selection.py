@@ -1,6 +1,6 @@
-"""US-04 (part 1) — Built-in vs custom tool-selection framework.
+"""Built-in vs custom tool-selection framework.
 
-Covers AC-04-01 (selection guide doc) and AC-04-02 (select_tool, incl. Edit-fails fallback).
+Covers the selection guide doc and select_tool (incl. Edit-fails fallback).
 """
 
 from __future__ import annotations
@@ -14,7 +14,7 @@ from inventory_agent.selection import CUSTOM_INVENTORY, select_tool
 GUIDE = Path(__file__).resolve().parent.parent / "docs" / "tool_selection_guide.md"
 
 
-# --- AC-04-01 -------------------------------------------------------------------------
+# --- Selection guide doc -------------------------------------------------------------------------
 
 
 def test_selection_guide_covers_all_builtins_fallback_and_custom() -> None:
@@ -25,7 +25,7 @@ def test_selection_guide_covers_all_builtins_fallback_and_custom() -> None:
     assert "custom inventory" in doc.lower()
 
 
-# --- AC-04-02 -------------------------------------------------------------------------
+# --- select_tool routing -------------------------------------------------------------------------
 
 
 @pytest.mark.parametrize(

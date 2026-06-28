@@ -10,6 +10,5 @@ The completed project — this equals the reference solution. All modules are im
 .venv/bin/mcp-governance audit --audit-log /tmp/audit.json
 ```
 
-**Difference from the provided reference repo:** none in `mcp_governance/`, `tests/`,
-`data/`, or `fixtures/` (verified byte-identical). Only author-side build artifacts
-(`spec/`, `notes/`, caches, `.venv/`, the author README) are omitted from this learner tree.
+**Scope of this tree:** `mcp_governance/`, `tests/`, `data/`, and `fixtures/` make up the
+complete project. Only build artifacts (caches, `.venv/`) are omitted.

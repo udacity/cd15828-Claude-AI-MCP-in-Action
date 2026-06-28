@@ -1,4 +1,4 @@
-"""US-05 -- audited agent loop, append-only audit trail, four-decisions mapping, live test."""
+"""Audited agent loop, append-only audit trail, four-decisions mapping, live test."""
 
 from __future__ import annotations
 
@@ -32,7 +32,7 @@ async def _bridge() -> Bridge:
     return await build_bridge()
 
 
-# ---- AC-05-01: append-only audit trail, digest not cleartext --------------------
+# ---- Append-only audit trail, digest not cleartext --------------------
 
 
 def test_audit_trail_is_append_only_and_ordered() -> None:
@@ -65,7 +65,7 @@ def test_arg_digest_is_stable_and_hides_raw_values() -> None:
     assert "CLM-10001" not in d1  # raw PII/id never in cleartext
 
 
-# ---- AC-05-02: AuditedToolRunner records exactly one entry per call --------------
+# ---- AuditedToolRunner records exactly one entry per call --------------
 
 
 async def test_runner_records_one_entry_per_call_success_and_error() -> None:
@@ -97,7 +97,7 @@ async def test_digests_differ_for_different_args() -> None:
     assert digests[0] != digests[1]
 
 
-# ---- AC-05-03: bridge exposes all servers' tools simultaneously; loop terminates -
+# ---- Bridge exposes all servers' tools simultaneously; loop terminates -
 
 
 async def test_bridge_exposes_all_servers_tools_simultaneously() -> None:
@@ -153,7 +153,7 @@ def test_four_enterprise_decisions_map_to_named_components() -> None:
     assert AuditTrail.__name__ == "AuditTrail"  # audit trail
 
 
-# ---- AC-05-04: CLI run + audit ---------------------------------------------------
+# ---- CLI run + audit ---------------------------------------------------
 
 
 def _scripted_get_claim() -> ScriptedRunner:
@@ -187,7 +187,7 @@ def test_cli_run_and_audit_roundtrip(tmp_path: Path, capsys: pytest.CaptureFixtu
     assert audit_out[0]["caller_identity"] == "adj-3"
 
 
-# ---- AC-05-05: live test (real model selects the governed custom tool) -----------
+# ---- Live test (real model selects the governed custom tool) -----------
 
 
 @pytest.mark.live

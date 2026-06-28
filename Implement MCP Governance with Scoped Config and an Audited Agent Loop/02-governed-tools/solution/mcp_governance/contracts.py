@@ -3,7 +3,7 @@
 Each description is engineered to resist the failure mode from the Architect's Playbook's
 "MCP Tool Specificity" (p23): an agent defaulting to a generic built-in (web search, file
 grep) instead of the authoritative custom tool. Every contract therefore carries the three
-fallback-resistant elements the linter (US-04) checks for:
+fallback-resistant elements the linter checks for:
 
 1. an explicit **"Use this when ..."** trigger,
 2. explicit **differentiation** from the generic built-in ("Use this instead of ..."),

@@ -1,7 +1,7 @@
 """Service layer over the local claim/policy records.
 
 Deliberately independent of FastMCP and the Anthropic SDK so the business logic is
-unit-testable on its own (AC-02-04). The servers (``servers.py``) are thin wrappers.
+unit-testable on its own. The servers (``servers.py``) are thin wrappers.
 """
 
 from __future__ import annotations

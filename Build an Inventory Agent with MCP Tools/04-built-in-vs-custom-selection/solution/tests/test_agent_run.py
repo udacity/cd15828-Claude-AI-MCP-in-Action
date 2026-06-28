@@ -1,7 +1,7 @@
-"""US-04 (part 2) — End-to-end agent run, CLI, escalation, and the MCP/API bridge.
+"""End-to-end agent run, CLI, escalation, and the MCP/API bridge.
 
-Covers AC-04-03 (committed real-API transcript structure), AC-04-04 (CLI entry point),
-AC-04-05 (structured escalation), plus validation C1 (isError -> is_error bridge).
+Covers the committed real-API transcript structure, the CLI entry point,
+structured escalation, plus the isError -> is_error bridge (validation C1).
 """
 
 from __future__ import annotations
@@ -26,7 +26,7 @@ def events() -> list[dict[str, Any]]:
     return json.loads(FIXTURE.read_text())["events"]
 
 
-# --- AC-04-03: transcript was real-API generated and has the expected structure -------
+# --- Transcript was real-API generated and has the expected structure -------
 
 
 def test_transcript_contains_a_tool_invocation(events: list[dict[str, Any]]) -> None:
@@ -61,7 +61,7 @@ def test_transcript_halts_on_permission_error_with_escalation(events: list[dict[
     assert any(e["type"] == "escalation" for e in events[perm_idx + 1 :])
 
 
-# --- AC-04-05: structured escalation payload ------------------------------------------
+# --- Structured escalation payload ------------------------------------------
 
 
 def test_escalation_payload_has_required_fields(events: list[dict[str, Any]]) -> None:
@@ -77,7 +77,7 @@ def test_build_escalation_shape() -> None:
     assert set(dumped) == {"sku", "requested_change", "root_cause", "recommended_action"}
 
 
-# --- AC-04-04: CLI entry point ---------------------------------------------------------
+# --- CLI entry point ---------------------------------------------------------
 
 
 def test_console_script_is_registered() -> None:

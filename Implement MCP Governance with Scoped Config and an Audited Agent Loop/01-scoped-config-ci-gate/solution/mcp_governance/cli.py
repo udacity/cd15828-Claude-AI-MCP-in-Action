@@ -2,10 +2,10 @@
 
 Subcommands are added per governance concern:
 
-* ``ci-check <path>`` -- the merge-time gate (US-01); exit 0 clean / 1 on violations.
-* ``decide`` -- render the build-vs-reuse decision matrix (US-04).
-* ``run <request.json>`` -- run one request through the audited agent loop (US-05).
-* ``audit`` -- print the recorded audit trail (US-05).
+* ``ci-check <path>`` -- the merge-time gate; exit 0 clean / 1 on violations.
+* ``decide`` -- render the build-vs-reuse decision matrix.
+* ``run <request.json>`` -- run one request through the audited agent loop.
+* ``audit`` -- print the recorded audit trail.
 """
 
 from __future__ import annotations

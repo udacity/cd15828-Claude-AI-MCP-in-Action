@@ -1,8 +1,8 @@
-"""US-01 — Four differentiated, single-purpose MCP tools.
+"""Four differentiated, single-purpose MCP tools.
 
-Covers AC-01-01 (four typed tools), AC-01-02 (structured descriptions with example +
-edge case), AC-01-03 (disambiguation + router), AC-01-04 (no catch-all; decomposition doc),
-AC-01-05 (system prompt free of keyword-sensitive steering).
+Covers four typed tools, structured descriptions (with example +
+edge case), disambiguation + router, no catch-all (decomposition doc),
+and a system prompt free of keyword-sensitive steering.
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ async def _tools() -> dict[str, object]:
     return {t.name: t for t in await server.list_tools()}
 
 
-# --- AC-01-01 -------------------------------------------------------------------------
+# --- Tool registration and typed schemas -------------------------------------------------------------------------
 
 
 async def test_server_registers_exactly_four_named_tools() -> None:
@@ -55,7 +55,7 @@ async def test_every_tool_has_a_nonempty_description() -> None:
         assert desc and len(desc) > 40, name
 
 
-# --- AC-01-02 -------------------------------------------------------------------------
+# --- Structured tool descriptions -------------------------------------------------------------------------
 
 
 @pytest.mark.parametrize("name", TOOL_NAMES)
@@ -76,7 +76,7 @@ def test_rendered_description_surfaces_every_section(name: str) -> None:
         assert marker in rendered, (name, marker)
 
 
-# --- AC-01-03 -------------------------------------------------------------------------
+# --- Disambiguation and intent routing -------------------------------------------------------------------------
 
 
 def test_check_stock_and_process_return_descriptions_disambiguate() -> None:
@@ -104,7 +104,7 @@ def test_router_resolves_intent_to_correct_tool(intent: str, expected: str) -> N
     assert route_intent(intent) == expected
 
 
-# --- AC-01-04 -------------------------------------------------------------------------
+# --- No generic catch-all tool -------------------------------------------------------------------------
 
 
 async def test_no_generic_catchall_tool_is_registered() -> None:
@@ -124,7 +124,7 @@ def test_decomposition_doc_documents_monolithic_antipattern() -> None:
         assert tool in doc
 
 
-# --- AC-01-05 -------------------------------------------------------------------------
+# --- System prompt steering -------------------------------------------------------------------------
 
 
 def test_system_prompt_is_free_of_keyword_sensitive_steering() -> None:

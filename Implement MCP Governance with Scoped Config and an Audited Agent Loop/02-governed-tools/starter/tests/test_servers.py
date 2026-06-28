@@ -1,4 +1,4 @@
-"""US-02 -- custom claims/policy FastMCP servers + built-in-resistant tool descriptions."""
+"""Custom claims/policy FastMCP servers + built-in-resistant tool descriptions."""
 
 from __future__ import annotations
 
@@ -51,7 +51,7 @@ POLICIES = [
 ]
 
 
-# ---- AC-02-04: service layer, independent of FastMCP ----------------------------
+# ---- Service layer, independent of FastMCP ----------------------------
 
 
 def test_get_claim_hit_and_miss() -> None:
@@ -82,7 +82,7 @@ def test_services_load_from_committed_data() -> None:
     assert policies.lookup_policy("POL-5001") is not None
 
 
-# ---- AC-02-01: graceful tool failure (structured error, never raises) -----------
+# ---- Graceful tool failure (structured error, never raises) -----------
 
 
 def test_tool_not_found_returns_structured_error() -> None:
@@ -105,7 +105,7 @@ def test_policy_not_found_structured_error() -> None:
     assert result["found"] is False and result["error_category"] == "not_found"
 
 
-# ---- AC-02-02 / AC-02-03: registered tool sets + descriptions from CONTRACTS -----
+# ---- Registered tool sets + descriptions from CONTRACTS -----
 
 
 async def _tool_map(server: FastMCP) -> dict[str, str]:

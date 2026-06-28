@@ -1,8 +1,8 @@
-"""US-03 — Tool distribution and tool_choice configuration.
+"""Tool distribution and tool_choice configuration.
 
-Covers AC-03-01 (exactly four scoped tools), AC-03-02 (tool_choice payloads),
-AC-03-03 (check_stock-before-process_return sequence guard), AC-03-04 (well-formed
-Anthropic Messages request payloads).
+Covers exactly four scoped tools, tool_choice payloads,
+the check_stock-before-process_return sequence guard, and well-formed
+Anthropic Messages request payloads.
 """
 
 from __future__ import annotations
@@ -19,7 +19,7 @@ from inventory_agent.policy import (
 )
 from inventory_agent.server import EXPECTED_TOOLS, build_server
 
-# --- AC-03-01 -------------------------------------------------------------------------
+# --- Tool scope and schema shape -------------------------------------------------------------------------
 
 
 def test_agent_is_configured_with_exactly_four_tools() -> None:
@@ -42,7 +42,7 @@ def test_each_anthropic_schema_is_well_formed() -> None:
         assert s["input_schema"]["properties"]
 
 
-# --- AC-03-02 -------------------------------------------------------------------------
+# --- tool_choice payloads -------------------------------------------------------------------------
 
 
 @pytest.mark.parametrize(
@@ -57,7 +57,7 @@ def test_tool_choice_payload_per_workflow(workflow: Workflow, expected: dict[str
     assert tool_choice_for(workflow) == expected
 
 
-# --- AC-03-03 -------------------------------------------------------------------------
+# --- Return-workflow sequence guard -------------------------------------------------------------------------
 
 
 def test_return_guard_blocks_process_return_before_check_stock() -> None:
@@ -76,7 +76,7 @@ def test_verify_before_return_workflow_forces_check_stock_first() -> None:
     assert tool_choice_for(Workflow.VERIFY_BEFORE_RETURN) == {"type": "tool", "name": "check_stock"}
 
 
-# --- AC-03-04 -------------------------------------------------------------------------
+# --- Messages request payloads -------------------------------------------------------------------------
 
 
 def test_request_payload_carries_tools_and_messages() -> None:

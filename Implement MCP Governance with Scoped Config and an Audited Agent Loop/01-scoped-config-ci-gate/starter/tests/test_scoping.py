@@ -1,4 +1,4 @@
-"""US-01 -- scoped MCP config registry, env-var expansion, secret-leak CI gate."""
+"""Scoped MCP config registry, env-var expansion, secret-leak CI gate."""
 
 from __future__ import annotations
 
@@ -30,7 +30,7 @@ FULL_ENV = {
 }
 
 
-# ---- AC-01-01: typed models + scope tagging + typed errors ----------------------
+# ---- Typed models + scope tagging + typed errors ----------------------
 
 
 def test_models_parse_and_tag_project_scope() -> None:
@@ -70,7 +70,7 @@ def test_missing_file_raises_config_error(tmp_path: Path) -> None:
         load_project_config(tmp_path / "nope.json")
 
 
-# ---- AC-01-02: env-var expansion ------------------------------------------------
+# ---- Env-var expansion ------------------------------------------------
 
 
 def test_expand_env_resolves_all_tokens() -> None:
@@ -114,7 +114,7 @@ def test_find_missing_env_vars_collects_all() -> None:
     assert vars_missing == {"POLICY_API_KEY", "GITHUB_TOKEN"}
 
 
-# ---- AC-01-03 / AC-01-04: secret scan; committed fixtures are clean -------------
+# ---- Secret scan; committed fixtures are clean -------------
 
 
 def test_clean_fixtures_have_zero_leaks() -> None:
@@ -167,7 +167,7 @@ def test_non_credential_literal_is_not_a_leak(tmp_path: Path) -> None:
     assert scan_for_secrets(load_project_config(cfg)) == []
 
 
-# ---- AC-01-05: ci-check CLI exit codes ------------------------------------------
+# ---- ci-check CLI exit codes ------------------------------------------
 
 
 def test_ci_check_clean_fixture_exit_zero(capsys: pytest.CaptureFixture[str]) -> None:

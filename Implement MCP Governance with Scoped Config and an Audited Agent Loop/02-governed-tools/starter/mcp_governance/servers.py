@@ -4,8 +4,8 @@
 These are real FastMCP servers. Each tool is a thin wrapper over the service layer, and
 its description comes from :data:`~mcp_governance.contracts.CONTRACTS` so descriptions stay
 the single source of truth. ``claims-database`` also exposes the ``claims://schema``
-resource (US-03). The tool *functions* (``call_get_claim`` etc.) are module-level so the
-US-05 bridge can dispatch to the exact same logic the server registers.
+resource. The tool *functions* (``call_get_claim`` etc.) are module-level so the
+bridge can dispatch to the exact same logic the server registers.
 
 The project ``.mcp.json`` points at this module: ``python -m mcp_governance.servers claims``
 runs the claims server over stdio; ``... policy`` runs the policy server.
@@ -46,7 +46,7 @@ def _claim_wire(claim: Claim) -> dict[str, Any]:
     return {"found": True, "is_error": False, **claim.model_dump()}
 
 
-# --- tool implementations (shared by the FastMCP servers and the US-05 bridge) ------
+# --- tool implementations (shared by the FastMCP servers and the bridge) ------
 
 
 def call_get_claim(svc: ClaimsService, claim_id: str) -> dict[str, Any]:

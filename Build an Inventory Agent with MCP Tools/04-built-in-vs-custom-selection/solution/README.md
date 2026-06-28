@@ -1,8 +1,8 @@
 # Solution — Selecting Built-in vs Custom Tools
 
 Final project state. Every module is complete, and this `solution/` equals the reference
-implementation (the differences across the chain were stub-to-implementation only). The learner
-finishes the arc holding the full working project.
+implementation (the differences across the chain were stub-to-implementation only). This final
+stage holds the full working project.
 
 ## Verify
 

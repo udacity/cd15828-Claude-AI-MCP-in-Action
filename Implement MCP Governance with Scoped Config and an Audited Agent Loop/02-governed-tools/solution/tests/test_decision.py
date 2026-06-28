@@ -1,4 +1,4 @@
-"""US-04 -- build-vs-reuse decision engine + tool-description quality linter."""
+"""Build-vs-reuse decision engine + tool-description quality linter."""
 
 from __future__ import annotations
 
@@ -30,7 +30,7 @@ def _need(**overrides: object) -> IntegrationNeed:
     return IntegrationNeed.model_validate(base)
 
 
-# ---- AC-04-01: decision rules ---------------------------------------------------
+# ---- Decision rules ---------------------------------------------------
 
 
 def test_proprietary_data_forces_custom() -> None:
@@ -63,7 +63,7 @@ def test_high_customization_with_community_is_borderline_custom() -> None:
     assert "high_customization" in rec.deciding_factors
 
 
-# ---- AC-04-02: the committed 5-scenario matrix ----------------------------------
+# ---- The committed 5-scenario matrix ----------------------------------
 
 
 def test_matrix_has_five_needs_with_expected_recommendations() -> None:
@@ -90,7 +90,7 @@ def test_decide_cli_renders_table(capsys: pytest.CaptureFixture[str]) -> None:
     assert "claims database" in captured
 
 
-# ---- AC-04-03 / AC-04-04: the description linter ---------------------------------
+# ---- The description linter ---------------------------------
 
 
 def test_bare_description_scores_below_threshold() -> None:

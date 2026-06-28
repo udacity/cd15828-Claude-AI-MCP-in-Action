@@ -1,6 +1,6 @@
 """The claims-record schema as a **single source of truth**.
 
-The ``claims://schema`` MCP resource (US-03) is *derived* from ``CLAIMS_SCHEMA`` -- it is
+The ``claims://schema`` MCP resource is *derived* from ``CLAIMS_SCHEMA`` -- it is
 never hand-maintained as a second copy. A parity test asserts these field names match the
 keys actually present in ``data/claims`` so the catalog can't drift from the data.
 """

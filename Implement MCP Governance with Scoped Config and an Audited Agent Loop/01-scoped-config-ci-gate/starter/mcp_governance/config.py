@@ -14,4 +14,4 @@ INTEGRATION_NEEDS_PATH = DATA_DIR / "integration_needs.json"
 FIXTURES_DIR = PROJECT_ROOT / "fixtures"
 
 # Cheap, sufficient for tool dispatch. Configurable where it matters (loop/runner).
-DEFAULT_MODEL = "claude-haiku-4-5"
+DEFAULT_MODEL = "claude-haiku-4-5-20251001"

@@ -81,8 +81,8 @@ def test_verify_before_return_workflow_forces_check_stock_first() -> None:
 
 def test_request_payload_carries_tools_and_messages() -> None:
     messages = [{"role": "user", "content": "how many SKU-1001 in the east warehouse?"}]
-    req = build_messages_request("claude-haiku-4-5", messages, build_server(), Workflow.OPEN_ENDED)
-    assert req["model"] == "claude-haiku-4-5"
+    req = build_messages_request("claude-haiku-4-5-20251001", messages, build_server(), Workflow.OPEN_ENDED)
+    assert req["model"] == "claude-haiku-4-5-20251001"
     assert req["messages"] == messages
     assert isinstance(req["max_tokens"], int) and req["max_tokens"] > 0
     assert len(req["tools"]) == 4
@@ -100,5 +100,5 @@ def test_request_payload_carries_tools_and_messages() -> None:
 def test_request_payload_tool_choice_matches_workflow(
     workflow: Workflow, expected: dict[str, str]
 ) -> None:
-    req = build_messages_request("claude-haiku-4-5", [], build_server(), workflow)
+    req = build_messages_request("claude-haiku-4-5-20251001", [], build_server(), workflow)
     assert req["tool_choice"] == expected

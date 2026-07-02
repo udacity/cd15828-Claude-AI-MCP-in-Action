@@ -30,7 +30,7 @@ from inventory_agent.server import build_server
 from inventory_agent.service import InventoryService
 
 MAX_TRANSIENT_RETRIES = 2
-DEFAULT_MODEL = "claude-haiku-4-5"
+DEFAULT_MODEL = "claude-haiku-4-5-20251001"
 
 
 def should_retry(result: ToolResult) -> bool:

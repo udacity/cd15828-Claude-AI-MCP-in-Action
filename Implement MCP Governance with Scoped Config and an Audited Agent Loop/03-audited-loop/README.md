@@ -9,8 +9,8 @@ every governed tool call is recorded and a real model can be steered to the cust
 - `arg_digest` — a stable hash so a raw `claim_id` never lands in the trail in cleartext.
 - The **append-only** `AuditTrail.record` and the `AuditedToolRunner` **gateway** every
   governed call passes through (one audit entry per call, on success and error).
-- The **bridge merge** that exposes *both* servers' tools to the model simultaneously
-  (exam K3) — the common under-build is to wire only one.
+- The **bridge merge** that exposes *both* servers' tools to the model simultaneously.
+  The common under-build is to wire only one.
 - The `stop_reason`-driven `run_agent` loop.
 
 When this exercise is complete, the project equals the full reference solution.

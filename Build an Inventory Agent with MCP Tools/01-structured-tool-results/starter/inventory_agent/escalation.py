@@ -1,7 +1,7 @@
 """Structured escalation handoff.
 
 When the agent halts on a permission error it must emit a compact, structured summary for a
-human approver, not dump the raw transcript (Playbook *Escalation Handoff*).
+human approver, not dump the raw transcript.
 """
 
 from __future__ import annotations

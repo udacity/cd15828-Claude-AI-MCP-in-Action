@@ -8,7 +8,7 @@ FastMCP registration, so they stay the single source of truth) and expose them a
 in-process equivalent of what Claude Code's MCP client does over stdio.
 
 Crucially the bridge combines tools from *all* configured servers so they are available to
-the model **simultaneously** in one loop (exam K3).
+the model **simultaneously** in one loop.
 """
 
 from __future__ import annotations
@@ -100,7 +100,7 @@ async def build_bridge(
     policy = policy_svc or PolicyService.from_dir()
 
     tools: list[GovernedTool] = []
-    # TODO (LO-6 / exam K3): read the registered tools from BOTH servers and expose them
+    # TODO (LO-6): read the registered tools from BOTH servers and expose them
     #   SIMULTANEOUSLY. The common under-build is to wire one server; the model must see
     #   every configured server's tools at once. For each (server, server_name) in
     #   build_claims_server(claims)/"claims-database" and build_policy_server(policy)/

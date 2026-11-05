@@ -4,7 +4,7 @@ The loop drives real tool use: the model selects tools (via the descriptions and
 policy), and the harness executes them against the inventory service. Two recovery behaviors are
 owned by the harness, not the model:
 
-* **Auto-retry** transient errors up to a cap (Playbook: transient failures resolve in 2-3
+* **Auto-retry** transient errors up to a cap (transient failures usually clear within 2-3
   attempts).
 * **Fail fast** on a permission error — halt the workflow and emit a structured escalation.
 

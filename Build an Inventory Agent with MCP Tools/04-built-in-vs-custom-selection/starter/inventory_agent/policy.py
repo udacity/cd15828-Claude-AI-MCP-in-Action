@@ -3,7 +3,7 @@
 Encodes two architectural decisions for the inventory agent:
 
 * **Distribution** — the agent is scoped to four tools, within the 4-5-per-agent guideline
-  (exam guide Task 2.3: too many tools, e.g. 18 vs 4-5, degrades selection reliability).
+  (too many tools, e.g. 18 vs 4-5, degrades selection reliability).
 * **tool_choice** — each workflow maps to one of the three Messages API modes: forced single
   tool, ``any`` (must call a tool), or ``auto`` (model decides).
 """

@@ -4,7 +4,7 @@ The model runs through a :class:`ModelRunner` Protocol so the real Anthropic cli
 scripted test double are interchangeable (no mocks at the API boundary -- the real path
 makes real calls; the fake is a double for the *loop*, not a fake HTTP response). Every
 tool call is dispatched through the :class:`~mcp_governance.audit.AuditedToolRunner` gateway,
-so it lands in the audit trail. Termination is driven by ``stop_reason`` (exam Task 1.1).
+so it lands in the audit trail. Termination is driven by ``stop_reason``.
 """
 
 from __future__ import annotations

@@ -1,12 +1,11 @@
 """Build-vs-reuse decision engine and the tool-description quality linter.
 
-The decision framework (exam Task 2.4 S4) makes the community-vs-custom call defensible:
+The decision framework makes the community-vs-custom call defensible:
 proprietary or PII-bearing data must live in a server the team controls (custom); a mature
 community server covering a generic, low-customization need should be reused.
 
-The linter operationalizes "enhance tool descriptions to prevent built-in-tool preference"
-(exam S3 / Playbook "MCP Tool Specificity") by scoring a description for the three
-fallback-resistant elements the contracts carry.
+The linter checks that a tool description keeps an agent from preferring a generic built-in
+tool, by scoring it for the three fallback-resistant elements the contracts carry.
 """
 
 from __future__ import annotations

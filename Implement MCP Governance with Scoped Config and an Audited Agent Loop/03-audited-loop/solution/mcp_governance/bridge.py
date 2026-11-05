@@ -7,7 +7,7 @@ FastMCP registration, so they stay the single source of truth) and expose them a
 ``tools`` definitions, dispatching calls back to the shared service logic.
 
 Crucially the bridge combines tools from *all* configured servers so they are available to
-the model **simultaneously** in one loop (exam K3).
+the model **simultaneously** in one loop.
 """
 
 from __future__ import annotations
